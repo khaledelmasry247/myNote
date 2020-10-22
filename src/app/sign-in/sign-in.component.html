@@ -1,0 +1,29 @@
+<section id='sign-in'>
+
+    <div class="container">
+    
+                <h1 class="text-center text-light py-4">Login Form</h1>
+        <form [formGroup]='signIn' (ngSubmit)='signDate(signIn)' class="w-75 m-auto">
+            <div class="row">
+              <div class="col-md-12">
+
+                <div *ngIf='isflag'><p  class="alert-danger text-dark p-3 rounded">3mail Or password are Not Correct</p></div>
+
+              </div>
+                <div class="col-md-12">
+                    <input type='text'  formControlName='email' class="form-control" placeholder="Enter Your Email">
+                    <p *ngIf='signIn.get("email").errors!=null&&signIn.get("email").touched'>Email is Invalid</p>
+                    <input type='password'  formControlName='password'  class="form-control"placeholder= 'Enter Your Password'>
+                    <p *ngIf='signIn.get("password").errors!=null&&signIn.get("password").touched'>Invalid Password</p>
+
+                    <button class="btn btn-info w-100" > Login </button>
+                </div>
+            </div>
+    
+        </form>
+    
+    </div>
+    <div id="particles-js"></div>
+
+    
+    </section>

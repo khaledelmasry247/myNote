@@ -28,9 +28,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/myasset/js/particles.js"
+
+           
+      ]
           },
           "configurations": {
             "production": {
@@ -123,6 +133,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "myapp2"
+    }
+  },
+  "defaultProject": "myapp2",
+  "cli": {
+    "analytics": "aa796656-6d2c-4cfa-8114-bbacb9c6ff60"
+  }
 }

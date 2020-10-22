@@ -1,0 +1,73 @@
+<body>
+<section class="register-section">
+    <div class="container p-5  py-5 w-50 ">
+        <h3 class="mb-5 text-center text-light font-weight-bold ">Registeration Form</h3>
+        <form [formGroup]='register' (ngSubmit)="formDate(register)">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+
+
+                  
+                    <input type="text"  formControlName='first_name' [class.is-valid]='register.get("first_name").errors==null&&register.get("first_name").touched'
+                         class="form-control" placeholder="first name">
+                    <p class="text-danger" *ngIf='register.get("first_name").errors!=null&&register.get("first_name").touched'> Invalid
+                        Firt Name</p>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <input type="text"
+                    [class.is-valid]='register.get("last_name").errors==null&&register.get("last_name").touched'
+                    formControlName='last_name' class="form-control" placeholder="last name">
+                    <p class="text-danger"  *ngIf='register.get("last_name").errors!=null&&register.get("last_name").touched'> Invalid last
+ Name</p>
+                </div>
+            </div>
+
+            <p class="alert-danger" *ngIf='erorMg'> this Email Aready 3xist  Try another 3mail</p>
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <input type="text"
+                        [class.is-valid]='register.get("email").errors==null&&register.get("email").touched'
+                        formControlName='email' class="form-control" placeholder="email">
+                    <p class="text-danger"
+                        *ngIf='register.get("email").errors!=null&&register.get("email").touched'> Invalid
+                      email</p>
+                </div>
+            </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <input type="password"
+                        [class.is-valid]='register.get("password").errors==null&&register.get("password").touched'
+                        formControlName='password' class="form-control" placeholder="password">
+                    <ul class="text-danger alert-danger"
+                        *ngIf='register.get("password").errors!=null&&register.get("password").touched'> 
+                        <li>password must be Numers</li>
+                        <li>password must have 3 charachter At Least</li>
+                        <li>password must have special character like @ ,&,%,$</li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <input type="password"
+                        [class.is-valid]='register.get("repassword").errors==null&&register.get("repassword").value==register.get("password").value' formControlName='repassword' class="form-control" placeholder=" repassword">
+                        <p class="text-danger alert-danger "
+                        *ngIf='register.get("repassword").value!=register.get("password").value&&register.get("repassword").touched||register.get("repassword").errors!=null&&register.get("password").value&&register.get("repassword").touched'> Password &Repassword are Not Identical
+                        </p> 
+                </div>
+            </div>
+
+            </div>
+            <button class='btn btn-secondary m-3'[disabled]='register.invalid||register.get("repassword").value!=register.get("password").value' type="submit"> <span *ngIf='!isWait'>submit</span><span *ngIf='isWait'>await ...</span></button>
+        </form>
+
+    </div>
+    <div id="particles-js"></div>
+
+</section>
+</body>
