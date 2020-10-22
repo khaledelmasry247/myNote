@@ -5,7 +5,7 @@ import { registerLocaleData } from '@angular/common';
 import { from } from 'rxjs';
 import { AuthServiceService } from '../auth-service.service';
 import { Router } from '@angular/router';
-
+declare var particlesJS:any;
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
